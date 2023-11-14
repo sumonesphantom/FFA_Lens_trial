@@ -194,7 +194,7 @@ rgb_colors = get_colors(target_class_ids)
 detected_ids = None
 
 def load_images(file_uploader, imgsz):
-    uploaded_files = file_uploader("Choose multiple images", type=['png', 'jpg', 'jpeg','tif'], accept_multiple_files=True)
+    uploaded_files = file_uploader("Upload image", type=['png', 'jpg', 'jpeg','tif'], accept_multiple_files=True)
     file_names = []
     images = []
     for uploaded_file in uploaded_files:
