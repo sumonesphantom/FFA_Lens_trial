@@ -37,13 +37,13 @@ def attempt_download_yolo(file, repo):
 # def get_yolo5(weights):
 #     return torch.hub.load('ultralytics/yolov5','custom',path = '{}'.format(weights), force_reload =True)
 
-@st.cache(max_entries=2, allow_output_mutation=True)
+@st.cache(max_entries=2, allow_output_mutation=True,ttl=0.1*3600)
 def get_yolo8(weights):
     return YOLO(str(weights))
     # return torch.hub.load("ultralytics/ultralytics","custom",path='{}'.format(weights),force_reload=True)
 
 
-@st.cache(max_entries=10)
+@st.cache(max_entries=10,ttl=0.1*3600)
 def get_preds(img, imgsz):
     # if all_classes == False:
     #     model.conf = conf_thres
